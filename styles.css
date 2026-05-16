@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
+    --primary-color: #ff9500;
+    --secondary-color: #fbbf24;
     --danger-color: #ef4444;
     --success-color: #10b981;
     --text-color: #1f2937;
-    --light-bg: #f9fafb;
-    --border-color: #e5e7eb;
+    --light-bg: #fffbeb;
+    --border-color: #fcd34d;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(255, 149, 0, 0.3);
 }
 
 .nav-container {
@@ -67,7 +67,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -91,6 +91,7 @@ body {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content p {
@@ -109,7 +110,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .filter-bar {
@@ -128,12 +129,14 @@ body {
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background-color: white;
 }
 
 .search-box:focus,
 .category-select:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
 }
 
 /* Books Grid */
@@ -148,14 +151,16 @@ body {
     background: white;
     border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(255, 149, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    border: 2px solid transparent;
 }
 
 .book-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(255, 149, 0, 0.25);
+    border-color: var(--secondary-color);
 }
 
 .book-cover {
@@ -188,12 +193,13 @@ body {
 
 .book-category {
     display: inline-block;
-    background: var(--light-bg);
+    background: #fef3c7;
     color: var(--primary-color);
     padding: 0.25rem 0.75rem;
     border-radius: 0.25rem;
     font-size: 0.8rem;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .book-price {
@@ -211,7 +217,7 @@ body {
 }
 
 .quantity-selector button {
-    background: var(--light-bg);
+    background: #fef3c7;
     border: 1px solid var(--border-color);
     padding: 0.5rem 0.75rem;
     border-radius: 0.3rem;
@@ -270,12 +276,12 @@ body {
 }
 
 .btn-secondary {
-    background: #d1d5db;
+    background: #fed7aa;
     color: var(--text-color);
 }
 
 .btn-secondary:hover {
-    background: #9ca3af;
+    background: #fdba74;
 }
 
 .btn-success {
@@ -317,7 +323,8 @@ body {
     border-radius: 0.75rem;
     width: 90%;
     max-width: 600px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(255, 149, 0, 0.3);
+    border: 2px solid var(--border-color);
 }
 
 .modal-header {
@@ -325,10 +332,12 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
 }
 
 .modal-header h2 {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .close-btn {
@@ -336,7 +345,7 @@ body {
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #6b7280;
+    color: var(--primary-color);
 }
 
 .modal-body {
@@ -362,10 +371,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--light-bg);
+    background: #fffbeb;
     padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
 }
 
 .cart-item-info {
@@ -403,15 +412,17 @@ body {
 }
 
 .cart-summary {
-    background: var(--light-bg);
+    background: #fffbeb;
     padding: 1rem;
     border-radius: 0.5rem;
+    border: 2px solid var(--border-color);
     text-align: right;
 }
 
 .cart-summary p {
     margin: 0.5rem 0;
     font-weight: bold;
+    color: var(--primary-color);
 }
 
 /* About Section */
@@ -419,10 +430,12 @@ body {
     background: white;
     padding: 4rem 2rem;
     text-align: center;
+    border-top: 3px solid var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
 }
 
 .about-section h2 {
-    color: var(--text-color);
+    color: var(--primary-color);
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -445,7 +458,7 @@ body {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .contact-form {
@@ -461,17 +474,19 @@ body {
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
+    background-color: white;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(255, 149, 0, 0.2);
 }
 
 /* Footer */
 .footer {
-    background: var(--text-color);
+    background: linear-gradient(135deg, #ff9500 0%, #fbbf24 100%);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -483,11 +498,11 @@ body {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: var(--success-color);
+    background: var(--primary-color);
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
     z-index: 300;
     animation: slideIn 0.3s ease;
 }
